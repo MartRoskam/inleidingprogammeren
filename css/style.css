@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Poppins:wght@500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+.titel {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.bear-image {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.bear-image img {
+    height: 450px;
+    width: 450px;
+}
+
+.tekst {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 40px;
+}
+
+#honing, #bier, #slaap, #speel {
+    border: solid 3px;
+}
+
+#honing img {
+    height: 200px;
+    width: 200px;
+}
+
+#bier img {
+    height: 200px;
+    width: 200px;
+}
+
+#slaap img {
+    height: 200px;
+    width: 200px;
+}
+
+#speel img {
+    height: 200px;
+    width: 200px;
+}
+
