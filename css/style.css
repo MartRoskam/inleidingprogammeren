@@ -8,12 +8,16 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* Titel bovenaan de pagina */
 .titel {
     display: flex;
     flex-direction: column;
     text-align: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
+/* Plaatje van de beer */
 .bear-image {
     display: flex;
     justify-content: space-evenly;
@@ -24,40 +28,71 @@
     width: 450px;
 }
 
+/* Tekst onder de beer */
 .tekst {
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
+/* Buttons */
 .buttons {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: 40px;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 #honing, #bier, #slaap, #speel {
     border: solid 3px;
+    border-radius: 10px;
 }
 
-#honing img {
+#honing img, #bier img, #slaap img, #speel img {
     height: 200px;
     width: 200px;
 }
 
-#bier img {
-    height: 200px;
-    width: 200px;
+/* Bars */
+#bar-container {
+    width: 20%;
+    height: 30px;
+    background-color: #ddd;
+    border: 3px solid #000;
+    border-radius: 5px;
 }
 
-#slaap img {
-    height: 200px;
-    width: 200px;
+.bars {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
-#speel img {
-    height: 200px;
-    width: 200px;
+#honger-bar {
+    width: 20%;
+    height: 100%;
+    background-color: #F6AF30;
+    transition: width 0.1s;
 }
 
+#dorst-bar {
+    width: 20%;
+    height: 100%;
+    background-color: rgb(72, 139, 255);
+    transition: width 0.1s;
+}
+
+#slaap-bar {
+    width: 20%;
+    height: 100%;
+    background-color: rgb(252, 222, 52);
+    transition: width 0.1s;
+}
+
+#vermaak-bar {
+    width: 20%;
+    height: 100%;
+    background-color: #E41C5A;
+    transition: width 0.1s;
+}
