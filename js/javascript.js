@@ -11,11 +11,12 @@ const slaapBar = document.querySelector("#slaap-bar");
 const vermaakBar = document.querySelector("#vermaak-bar");
 
 // Lets voor het afspelen van sounds Bron: https://noaheakin.medium.com/adding-sound-to-your-js-web-app-f6a0ca728984 
-const honingSound = new Audio("sounds/honingslurp.mp3");
-const bierSound = new Audio("sounds/drinkbier.mp3");
+const honingSound = new Audio("sounds/honingslurp.mp3"); // Bron: https://pixabay.com/sound-effects/cartoon-slurp-37066/
+const bierSound = new Audio("sounds/drinkbier.mp3"); // Bron: https://pixabay.com/sound-effects/drink-sip-and-swallow-6974/
 const slaapSound = [
-    new Audio("sounds/snurk.mp3"),
-    new Audio("sounds/snurk2.mp3")
+    new Audio("sounds/snurk.mp3"), // Bron: https://pixabay.com/sound-effects/pug-roncando-95042/
+    new Audio("sounds/snurk2.mp3"), // Bron: https://pixabay.com/sound-effects/ronquido-102469/
+    new Audio("sounds/snurk3.mp3") // Bron: https://pixabay.com/sound-effects/snoring-42710/
 ]
 const balSound = new Audio("sounds/balbonk.mp3");
 
@@ -47,6 +48,7 @@ let intervalDood = setInterval(controleerDood, 750) // Check elke 750 milisecond
 // ChatGPT: https://chatgpt.com/share/38f76a65-2117-401b-a17c-e01ad76ec2f8
 // ChatGPT: https://chatgpt.com/share/3f6e4d84-296d-4cc4-9037-30ed8c6b37c2
 // ChatGPT: https://chatgpt.com/share/af7f17b4-8b77-4728-a41d-1f69de0bcba9 
+// Prompt: Ik heb nu jouw manier van het maken van een leeglopende healthbar in mijn code gezet, maar wat als ik wil dat wanneer ik op een button klik de healthbar weer volledig vol is?
 function honing() {
     if (honingStatus == false){ // Checkt of honingStatus true of false is (is false by default)
         bearVeranderen.src = "images/bearhoning.png"; // Wanneer honingstatus dus false is en je klikt op de button verandert het plaatje
@@ -56,12 +58,11 @@ function honing() {
 
         let randomHonger = Math.floor(Math.random() * 50) + 15; // Kiest een random getal en rond deze af
         honger += randomHonger; // Voegt het random getal aan de honger toe
-        hongerBar.style.width = honger + '%'; // hongerBar wordt geupdate (Bijvoorbeeld als honger 50 is dan is het % van de balk ook 50)
-        
         if (honger > 100) { // Zorgt ervoor dat de honger niet hoger dan 100 kan, dus dat het niet buiten de bar komt
             honger = 100;
-            hongerBar.style.width = vermaak + '%'; 
         }
+
+        hongerBar.style.width = honger + '%'; // Update hoe vol de bar is met de hongerbar width met de variabele honger
 
         setTimeout (() => { // Na 500 miliseconden wordt alles weer terug gezet naar de default status van de beer
             bearVeranderen.src = "images/bear.png";
@@ -87,12 +88,11 @@ function bier() {
 
         let randomDorst = Math.floor(Math.random() * 50) + 15;
         dorst += randomDorst;
-        dorstBar.style.width = dorst + '%';
-
         if (dorst > 100) {
             dorst = 100;
-            dorstBar.style.width = vermaak + '%';
         }
+
+        dorstBar.style.width = dorst + '%';
 
         setTimeout (() => {
             bearVeranderen.src = "images/bear.png";
@@ -118,12 +118,11 @@ function slaap() {
 
         let randomMoeheid = Math.floor(Math.random() * 100) + 15;
         moeheid += randomMoeheid;
-        slaapBar.style.width = moeheid + '%';
-
         if (moeheid > 100) {
             moeheid = 100;
-            slaapBar.style.width = vermaak + '%';
         }
+        slaapBar.style.width = moeheid + '%';
+
 
         setTimeout (() => {
             bearVeranderen.src = "images/bear.png";
@@ -149,12 +148,11 @@ function speel() {
 
         let randomVermaak = Math.floor(Math.random() * 50) + 15;
         vermaak += randomVermaak;
-        vermaakBar.style.width = vermaak + '%';
-
         if (vermaak > 100) {
             vermaak = 100;
-            vermaakBar.style.width = vermaak + '%';
         }
+        vermaakBar.style.width = vermaak + '%';
+
 
         setTimeout (() => {
             bearVeranderen.src = "images/bear.png";
@@ -188,9 +186,11 @@ if (honger == 0 || dorst == 0 || moeheid == 0 || vermaak == 0) { // Wanneer een 
 }
 
 // Function om willekeurig snurk geluid af te spelen
+// Bron: https://chatgpt.com/share/45054609-49a9-47ff-ad44-5062a0ecacff
+// Prompt: Stel ik wil dat wanneer er op de button slaap geklikt wordt dat er een keuze wordt gemaakt uit 2 snurk sound effect, hoe zou ik dat doen?
 function willekeurigSnurk() {
-    const randomIndex = Math.floor(Math.random() * slaapSound.length); // Pakt een random getal tussen 0 en 1 en vermenigvuldigt deze met de 2 (lengte van de slaapSound array). En rond deze daarna af naar beneden dus het wordt 0 of 1.
-    const randomSnurk = slaapSound[randomIndex]; // Wanneer randomIndex 0 of 1 is pakt hij dus slaapSound 0 of slaapSound 1
+    const randomIndex = Math.floor(Math.random() * slaapSound.length); // Pakt een random getal tussen 0 en 1 en vermenigvuldigt deze met de 3 (lengte van de slaapSound array). En rond deze daarna af naar beneden dus het wordt 0,1 of 2.
+    const randomSnurk = slaapSound[randomIndex]; // Wanneer randomIndex 0,1 of 2 is pakt hij dus slaapSound 0,1 of 2
     randomSnurk.play(); // De gekozen slaapSound wordt afgespeeld
 }
 
