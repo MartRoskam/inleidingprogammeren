@@ -10,7 +10,7 @@ const dorstBar = document.querySelector("#dorst-bar");
 const slaapBar = document.querySelector("#slaap-bar");
 const vermaakBar = document.querySelector("#vermaak-bar");
 
-// Lets voor het afspelen van sounds Bron: https://noaheakin.medium.com/adding-sound-to-your-js-web-app-f6a0ca728984 
+// Const voor het afspelen van sounds Bron: https://noaheakin.medium.com/adding-sound-to-your-js-web-app-f6a0ca728984 
 const honingSound = new Audio("sounds/honingslurp.mp3"); // Bron: https://pixabay.com/sound-effects/cartoon-slurp-37066/
 const bierSound = new Audio("sounds/drinkbier.mp3"); // Bron: https://pixabay.com/sound-effects/drink-sip-and-swallow-6974/
 const slaapSound = [
@@ -20,15 +20,15 @@ const slaapSound = [
 ]
 const balSound = new Audio("sounds/balbonk.mp3");
 
-// Lets om het plaatje van de beer te veranderen 
-let bearVeranderen = document.querySelector("#default");
+// Const om de tekst onder de beer te veranderen 
+const tekstVeranderen = document.querySelector("#tekst");
+
+// Const en lets om het plaatje van de beer te veranderen 
+const bearVeranderen = document.querySelector("#default");
 let honingStatus = false;
 let bierStatus = false;
 let slaapStatus = false;
 let speelStatus = false;
-
-// Let om de tekst onder de beer te veranderen 
-let tekstVeranderen = document.querySelector("#tekst");
 
 // Lets voor de waarde van de bars
 let honger = 100;

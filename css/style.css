@@ -44,6 +44,11 @@
     margin-bottom: 10px;
 }
 
+button span {
+    display: block;
+    font-size: 20px;
+}
+
 #honing, #bier, #slaap, #speel {
     border: solid 3px;
     border-radius: 10px;
@@ -55,7 +60,7 @@
 }
 
 /* Bars */
-#bar-container {
+.bar-container {
     width: 20%;
     height: 30px;
     background-color: #ddd;
